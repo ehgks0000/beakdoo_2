@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>코인</title>
+</head>
+<body>
+
+    <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <canvas id="price-chart" width="150px" height="100px"></canvas>
+    <canvas id="rsi-chart" width="150px" height="20px"></canvas>
+
+    <div id="price">coin price</div>
+    <div id="rsi">coin rsi</div>
+    <!-- <div>coin price</div> -->
+
+
+    <div>주문량</div>
+    <!-- count -->
+    <div>주문가격</div>
+    <!-- id 주문시점 -->
+    <div>
+        <span>매수</span>
+        <span>매도</span>
+    </div>
+
+    <div id="history">거래내역</div>
+    <div >손인률</div>
+    <form id="rate" action="http://localhost:3333/rate/:id" method="GET">
+        시점 : <input type="number" name="id"><br>
+        <!-- 주문량 : <input type="number"><br> -->
+        <!-- <input type="button" value="매수"> -->
+        <input type="button" onclick="test()" value="계산">
+    </form>
+    <div id="my-rate">
+
+    </div>
+    
+</body>
+</html>

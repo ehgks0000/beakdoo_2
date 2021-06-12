@@ -1,0 +1,22 @@
+/* body {
+  width: 450px;
+} */
+
+#history {
+  text-align: center;
+}
+
+#history-container {
+  display: inline-block;
+}
+
+#SELL {
+  margin-left: 55px;
+}
+
+#BUY {
+  margin-left: 55px;
+}
+
+#coin-container {
+}

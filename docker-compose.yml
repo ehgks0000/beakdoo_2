@@ -1,0 +1,35 @@
+version: '3.7'
+
+services:
+  beak:
+    container_name: beak
+    build:
+      context: ./
+    restart: unless-stopped
+    command: npm run start:dev
+    ports:
+      - 3333:3333
+    environment:
+      - IN_CONTAINER=true
+      - PORT=3333
+      - DATABASE_URL=postgresql://pro4:pro4@db:5432/pro4?schema=public
+    volumes:
+      - './:/app:delegated'
+      - '/app/node_modules'
+    depends_on:
+      - db
+
+  db:
+    container_name: db
+    image: postgres:13.2-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=pro4
+      - POSTGRES_PASSWORD=pro4
+      - POSTGRES_DB=pro4
+    volumes:
+      - './db/data:/var/lib/postgresql/data'
+      - './5.csv:/5.csv'
+      - './6.csv:/6.csv'
+volumes:
+  db:
