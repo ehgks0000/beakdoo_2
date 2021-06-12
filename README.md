@@ -1,3 +1,4 @@
+# 백두텍 1번
 # 도커 pg 접속
 
 docker exec -it <컨테이너아이디> bash
